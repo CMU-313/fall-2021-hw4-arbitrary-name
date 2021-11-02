@@ -13,10 +13,10 @@ The baseline model uses the following features:
 
 and has the following performance:
 
-F1 Score: 0.5357
-Accuracy: 0.8683
-Precision: 0.7692
-Recall: 0.4110
+- F1 Score: 0.5357
+- Accuracy: 0.8683
+- Precision: 0.7692
+- Recall: 0.4110
 
 Our model uses the following features instead:
 
@@ -28,10 +28,10 @@ Our model uses the following features instead:
 
 and has the following performance.
 
-F1: 0.7692
-Accuracy: 0.9241
-Precision: 0.8772
-Recall: 0.6849
+- F1: 0.7692
+- Accuracy: 0.9241
+- Precision: 0.8772
+- Recall: 0.6849
 
 We note here that based for all of our metrics, our updated model which includes the student's alcohol consumption performs better than the baseline. 
 
