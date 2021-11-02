@@ -6,6 +6,7 @@ RUN pip install --upgrade pip \
 
 RUN pip install flask
 RUN pip install -U scikit-learn
+Run pip install pytest
 
 # Add entrypoint (this allows variable expansion)
 COPY entrypoint.sh /entrypoint.sh
