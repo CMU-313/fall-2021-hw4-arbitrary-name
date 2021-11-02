@@ -13,7 +13,7 @@ def hello():
 @app.route('/predict')
 def predict():
 	 #use entries from the query string here but could also use json
-     assert(len(request.args) == 30, "Please provide all 30 features") 
+     #assert(len(request.args) == 30, "Please provide all 30 features") 
      request.args={
          "school":"GP",
          "sex":"F",
