@@ -1,3 +1,39 @@
 # Software Engineering for Machine Learning Assignment
 
-Please consult the [homework assignment](https://cmu-313.github.io//assignments/hw4) for full context and instructions for this code.  
+## API
+
+
+## Comparing Models
+
+The baseline model uses the following features:
+
+
+
+
+and has the following performance:
+
+
+
+Our model uses the following features instead:
+
+
+
+and has the following performance.
+
+
+
+We note here that based on ___,_____, and ____, our model performs bettter than the baseline.
+
+
+
+
+
+
+
+
+## Deployment Instructions
+
+
+
+
+## Testing
