@@ -39,8 +39,12 @@ NOTE: Given our limited data, we did not perform a train/test data split, and in
 
 
 ## Deployment Instructions
+To deploy, run the following commands in the dockerfile directory from the command line:
 
+```
+docker build -t ml:latest .
 
-
+docker run -d -p 5000:5000 ml
+```
 
 ## Testing
