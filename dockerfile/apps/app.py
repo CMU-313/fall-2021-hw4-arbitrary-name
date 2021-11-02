@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
+from sklearn.preprocessing import LabelEncoder
 import joblib
 import pandas as pd
 import numpy as np
+
 
 app = Flask(__name__)
 
@@ -12,11 +14,8 @@ def hello():
 @app.route('/predict')
 def predict():
 	 #use entries from the query string here but could also use json
-     age = request.args.get('age')
-     absences = request.args.get('absences')
-     health = request.args.get('health')
-     data = [[age],[health],[absences]]
-     query_df = pd.DataFrame({ 'age' : pd.Series(age) ,'health' : pd.Series(health) ,'absences' : pd.Series(absences)})
+     assert(len(request.args) == 30, "Please provide all 30 features") 
+     query_df = pd.DataFrame(request.args)
      query = pd.get_dummies(query_df)
      prediction = clf.predict(query)
      return jsonify(np.asscalar(prediction))
