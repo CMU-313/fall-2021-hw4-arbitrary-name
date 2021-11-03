@@ -4,10 +4,12 @@ import pandas as pd
 import numpy as np
 
 app = Flask(__name__)
+clf = joblib.load('model.pkl')
 
 @app.route('/')
 def hello():
-    return "try the predict route it is great!"
+    print("i am in hello")
+    return jsonify("try the predict route it is great!")
 
 @app.route('/predict')
 def predict():
@@ -29,5 +31,4 @@ def predict():
      return jsonify(np.asscalar(prediction))
 
 if __name__ == '__main__':
-    clf = joblib.load('/apps/model.pkl')
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0.0", debug=True)
