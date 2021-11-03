@@ -9,6 +9,17 @@ The expected feature inputs are of the following:
 - health - current health status (numeric: from 1 - very bad to 5 - very good)
 - absences - number of school absences (numeric: from 0 to 93)
 
+The expected output are of the following:
+- 1 indicates a quality student with G3 >= 15
+- 0 indicates a poor quality student with G3 < 15
+
+Here are example screenshots of outputs with their respective example inputs:
+![alt text](https://files.slack.com/files-pri/T02E7E44761-F02LP5E852L/image.png?pub_secret=da47a7e6b0)
+![alt text](https://files.slack.com/files-pri/T02E7E44761-F02KZAFFH26/image.png?pub_secret=53cfc30e91)
+
+Preconditions may include:
+- All 5 inputs need to be filled in order for the prediction to happen
+- The field names also need to be passed in exactly as is, and they are also case-sensitive. However the ordering of the fields does not matter. 
 
 ## Comparing Models
 
@@ -60,6 +71,5 @@ After the docker container is deployed, the prediction service is available thro
 ```
 curl http://localhost:5000/predict?age=18&absences=0&health=5&Walc=1&Dalc=1
 ```
-
 
 ## Testing
