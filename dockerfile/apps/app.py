@@ -26,9 +26,9 @@ def predict():
             return jsonify(-1)
         elif(health < 1 or health > 5):
             return jsonify(-1)
-        elif(walc < 1 or walc > 1):
+        elif(walc < 1 or walc > 5):
             return jsonify(-1)
-        elif(dalc < 1 or dalc > 1):
+        elif(dalc < 1 or dalc > 5):
             return jsonify(-1)
     except:
         return jsonify(-1)
