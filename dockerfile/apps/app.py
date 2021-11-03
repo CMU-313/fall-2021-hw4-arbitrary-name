@@ -28,5 +28,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    clf = joblib.load('/apps/model2.pkl')
+    clf = joblib.load('/apps/model.pkl')
     app.run(host="0.0.0.0", debug=True)
