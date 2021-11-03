@@ -13,20 +13,34 @@ def hello():
 
 @app.route('/predict')
 def predict():
-     age = request.args.get('age')
-     absences = request.args.get('absences')
-     health = request.args.get('health')
-     walc = request.args.get('Walc')
-     dalc = request.args.get('Dalc')
-     data = [[age],[health],[absences], [walc], [dalc]]
-     query_df = pd.DataFrame({ 'age' : pd.Series(age),
-                            'health' : pd.Series(health) ,
-                            'absences' : pd.Series(absences),
-                            'Walc': pd.Series(walc),
-                            'Dalc' : pd.Series(dalc),
-                            })
-     prediction = clf.predict(query_df)
-     return jsonify(np.asscalar(prediction))
+    try:
+        age = request.args.get('age')
+        absences = request.args.get('absences')
+        health = request.args.get('health')
+        walc = request.args.get('Walc')
+        dalc = request.args.get('Dalc')
+
+        if(age < 15 or age > 22):
+            return jsonify(-1)
+        elif(absences < 0 or absences > 93):
+            return jsonify(-1)
+        elif(health < 1 or health > 5):
+            return jsonify(-1)
+        elif(walc < 1 or walc > 1):
+            return jsonify(-1)
+        elif(dalc < 1 or dalc > 1):
+            return jsonify(-1)
+    except:
+        return jsonify(-1)
+    else:
+        data = [[age],[health],[absences], [walc], [dalc]]
+        query_df = pd.DataFrame({'Walc': pd.Series(walc),
+                                'Dalc' : pd.Series(dalc),
+                                'absences' : pd.Series(absences),
+                                'age' : pd.Series(age),
+                                'health' : pd.Series(health)})
+        prediction = clf.predict(query_df)
+        return jsonify(np.asscalar(prediction))
 
 
 if __name__ == '__main__':
