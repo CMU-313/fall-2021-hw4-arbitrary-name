@@ -2,6 +2,13 @@
 
 ## API
 
+The expected feature inputs are of the following:
+- age - student's age (numeric: from 15 to 22)
+- Dalc - workday alcohol consumption (numeric: from 1 - very low to 5 - very high)
+- Walc - weekend alcohol consumption (numeric: from 1 - very low to 5 - very high)
+- health - current health status (numeric: from 1 - very bad to 5 - very good)
+- absences - number of school absences (numeric: from 0 to 93)
+
 
 ## Comparing Models
 
@@ -39,12 +46,20 @@ NOTE: Given our limited data, we did not perform a train/test data split, and in
 
 
 ## Deployment Instructions
-To deploy, run the following commands in the dockerfile directory from the command line:
+To deploy, run the following commands in the `dockerfile` directory from the command line:
 
 ```
 docker build -t ml:latest .
 
 docker run -d -p 5000:5000 ml
 ```
+Consider using the `--no-cache` flag during build if changes do not seem to be propogating. 
+
+After the docker container is deployed, the prediction service is available through `localhost:5000/predict` and can either be visited (with args in the url) or `curl`-ed for prediction result. An example usage could look something like this:
+
+```
+curl http://localhost:5000/predict?age=18&absences=0&health=5&Walc=1&Dalc=1
+```
+
 
 ## Testing
