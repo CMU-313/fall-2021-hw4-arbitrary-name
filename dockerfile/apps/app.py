@@ -17,6 +17,17 @@ def predict():
         health = request.args.get('health')
         walc = request.args.get('Walc')
         dalc = request.args.get('Dalc')
+
+        if(age < 15 or age > 22):
+            return jsonify(-1)
+        elif(absences < 0 or absences > 93):
+            return jsonify(-1)
+        elif(health < 1 or health > 5):
+            return jsonify(-1)
+        elif(walc < 1 or walc > 1):
+            return jsonify(-1)
+        elif(dalc < 1 or dalc > 1):
+            return jsonify(-1)
     except:
         return jsonify(-1)
     else:
