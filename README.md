@@ -74,3 +74,13 @@ curl http://localhost:5000/predict?age=18&absences=0&health=5&Walc=1&Dalc=1
 ```
 
 ## Testing
+
+instructions: go to docker/apps and type: "pytest -s test_app.py" ,make sure you have installed pytest and flask and all them jazz on your machine :)
+
+For our testing, we used the flask test feature and pytest to run our automated tests. We created tests to verify the following:
+-That our client is up.
+-That we are predicting results.
+-We are returning an error for out-of-bound inputs.
+-We are returning an error for missing parameters.  
+
+We choose these tests as they represent the most important aspects of the microservices, that it works, and it will complain when erroneous inputs are given. 
