@@ -12,6 +12,7 @@ The expected feature inputs are of the following:
 The expected output are of the following:
 - 1 indicates a quality student with G3 >= 15
 - 0 indicates a poor quality student with G3 < 15
+- -1 indicates that there is an error with the input and a prediction could not be made. This is most likely due to missing input features, or out of range values. 
 
 Here are example screenshots of outputs with their respective example inputs:
 ![alt text](https://files.slack.com/files-pri/T02E7E44761-F02LP5E852L/image.png?pub_secret=da47a7e6b0)
